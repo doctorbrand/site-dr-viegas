@@ -67,4 +67,10 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.drviegas.com.br/es/resultados/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.drviegas.com.br/resultados/"/>
   </url>
+  <url>
+    <loc>https://www.drviegas.com.br/fellowship/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
