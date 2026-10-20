@@ -72,5 +72,29 @@
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.drviegas.com.br/fellow/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.drviegas.com.br/en/fellow/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.drviegas.com.br/es/fellow/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.drviegas.com.br/fellow/"/>
+  </url>
+  <url>
+    <loc>https://www.drviegas.com.br/en/fellow/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.drviegas.com.br/fellow/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.drviegas.com.br/en/fellow/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.drviegas.com.br/es/fellow/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.drviegas.com.br/fellow/"/>
+  </url>
+  <url>
+    <loc>https://www.drviegas.com.br/es/fellow/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.drviegas.com.br/fellow/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.drviegas.com.br/en/fellow/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.drviegas.com.br/es/fellow/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.drviegas.com.br/fellow/"/>
   </url>
 </urlset>
