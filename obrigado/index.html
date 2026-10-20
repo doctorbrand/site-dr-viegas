@@ -26,14 +26,23 @@ a{display:inline-flex;padding:1em 2em;border-radius:999px;background:var(--gold-
 <body>
 <main>
   <div class="ring" aria-hidden="true"></div>
-  <h1>Obrigado pelo contato</h1>
-  <p>Estamos abrindo a conversa com a equipe do Dr. Viégas no WhatsApp.</p>
+  <h1 id="t1">Obrigado pelo contato</h1>
+  <p id="t2">Estamos abrindo a conversa com a equipe do Dr. Viégas no WhatsApp.</p>
   <a id="go" href="https://wa.me/5521968736185">Abrir o WhatsApp</a>
 </main>
 <script>
 (function(){
-  var p=new URLSearchParams(location.search), origem=(p.get('origem')||'site').slice(0,60);
-  var url=(window.VG&&VG.whatsappUrl)?VG.whatsappUrl(origem):'https://wa.me/5521968736185';
+  var p=new URLSearchParams(location.search), origem=(p.get('origem')||'site').slice(0,60), lang=(p.get('lang')||'pt').slice(0,2);
+  var L={
+    pt:{h:'Obrigado pelo contato',t:'Estamos abrindo a conversa com a equipe do Dr. Viégas no WhatsApp.',b:'Abrir o WhatsApp',title:'Abrindo o WhatsApp | Dr. Diego Viégas',m:(window.VG_CONFIG&&VG_CONFIG.whatsappMessage)||'Olá! Vim pelo site do Dr. Viégas e gostaria de agendar uma consulta.'},
+    en:{h:'Thank you for reaching out',t:'We are opening a WhatsApp chat with Dr. Viégas\'s team.',b:'Open WhatsApp',title:'Opening WhatsApp | Dr. Diego Viégas',m:'Hello! I found Dr. Viégas\'s website and would like to book a consultation.'},
+    es:{h:'Gracias por contactarnos',t:'Estamos abriendo la conversación con el equipo del Dr. Viégas en WhatsApp.',b:'Abrir WhatsApp',title:'Abriendo WhatsApp | Dr. Diego Viégas',m:'¡Hola! Vi el sitio del Dr. Viégas y me gustaría agendar una consulta.'}
+  }[lang]||null;
+  if(!L){lang='pt';L={h:'',t:'',b:'',title:document.title,m:''};}
+  document.documentElement.lang={pt:'pt-BR',en:'en',es:'es'}[lang];
+  if(L.h){document.getElementById('t1').textContent=L.h;document.getElementById('t2').textContent=L.t;document.getElementById('go').textContent=L.b;document.title=L.title;}
+  var num=(window.VG_CONFIG&&VG_CONFIG.whatsapp)||'5521968736185';
+  var url='https://wa.me/'+num+'?text='+encodeURIComponent(L.m||'');
   document.getElementById('go').href=url;
   try{ if(window.VG) VG.lead(origem); }catch(e){}
   var d=(window.VG_CONFIG&&VG_CONFIG.redirectDelayMs)||350;

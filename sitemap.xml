@@ -1,18 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.drviegas.com.br/</loc>
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <image:image><image:loc>https://www.drviegas.com.br/img/retrato-jaleco.webp</image:loc><image:title>Dr. Diego Viégas, cirurgião plástico dedicado à mama</image:title></image:image>
-    <image:image><image:loc>https://www.drviegas.com.br/img/retrato-terno.webp</image:loc><image:title>Dr. Diego Viégas</image:title></image:image>
-    <image:image><image:loc>https://www.drviegas.com.br/img/fellowship-centro-cirurgico-1.webp</image:loc><image:title>Fellowship Viégas no centro cirúrgico</image:title></image:image>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.drviegas.com.br/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.drviegas.com.br/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.drviegas.com.br/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.drviegas.com.br/"/>
+    <image:image><image:loc>https://www.drviegas.com.br/img/retrato-jaleco.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.drviegas.com.br/en/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.drviegas.com.br/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.drviegas.com.br/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.drviegas.com.br/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.drviegas.com.br/"/>
+    <image:image><image:loc>https://www.drviegas.com.br/img/retrato-jaleco.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.drviegas.com.br/es/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.drviegas.com.br/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.drviegas.com.br/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.drviegas.com.br/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.drviegas.com.br/"/>
+    <image:image><image:loc>https://www.drviegas.com.br/img/retrato-jaleco.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.drviegas.com.br/llms.txt</loc>
     <lastmod>2026-10-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
   </url>
 </urlset>
