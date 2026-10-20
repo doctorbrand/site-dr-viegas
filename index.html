@@ -46,7 +46,7 @@ html{-webkit-text-size-adjust:100%}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
-body{background:var(--black);color:var(--white);font-family:var(--font);font-size:.95rem;font-weight:300;line-height:1.8;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--black);color:var(--white);font-family:var(--font);font-size:.95rem;font-weight:300;line-height:1.8;-webkit-font-smoothing:antialiased}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--black)}
 a{color:inherit}
 img{display:block;max-width:100%;height:auto}
@@ -94,7 +94,7 @@ nav.links a:hover{color:var(--gold-hi)}
 .hero-copy .lede{max-width:44ch}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .cred{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--dim)}
-.hero-photo{position:absolute;top:0;right:0;bottom:0;width:min(58%,860px);margin:0;pointer-events:none}
+.hero-photo{position:absolute;top:0;right:calc(max(0px, (100% - var(--wrap)) / 2) + 20px);bottom:0;width:min(56%,720px);margin:0;pointer-events:none}
 .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:62% 12%;mix-blend-mode:lighten;-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 30%),linear-gradient(to bottom,#000 72%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0%,#000 30%),linear-gradient(to bottom,#000 72%,transparent 100%);mask-composite:intersect}
 .facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);position:relative;z-index:2}
 .fact{padding:26px 24px 30px 0;display:grid;gap:4px}
@@ -103,7 +103,7 @@ nav.links a:hover{color:var(--gold-hi)}
 .fact span{font-size:.78rem;color:var(--muted);line-height:1.6}
 @media (max-width:900px){
   .hero-grid{min-height:0}
-  .hero-photo{position:relative;width:auto;height:480px;margin-inline:-20px}
+  .hero-photo{position:relative;right:auto;width:100%;height:480px;margin-inline:0}
   .hero-photo img{object-position:50% 10%;-webkit-mask-image:linear-gradient(to bottom,#000 60%,transparent 100%);mask-image:linear-gradient(to bottom,#000 60%,transparent 100%)}
   .hero-copy{padding-block:0 48px;margin-top:-90px}
   .facts{grid-template-columns:1fr 1fr}
@@ -273,7 +273,7 @@ section.tint{background:var(--ink)}
 
 /* Contato */
 .contact{position:relative;overflow:hidden;background:radial-gradient(40% 60% at 80% 35%,#17140f 0%,rgba(13,13,12,0) 70%),var(--ink)}
-.contact-photo{position:absolute;right:0;bottom:0;top:0;width:min(48%,640px)}
+.contact-photo{position:absolute;right:calc(max(0px, (100% - var(--wrap)) / 2) + 20px);bottom:0;top:0;width:min(46%,560px)}
 .contact-photo img{width:100%;height:100%;object-fit:cover;object-position:center 18%;mix-blend-mode:lighten;-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 32%),linear-gradient(to bottom,#000 70%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0%,#000 32%),linear-gradient(to bottom,#000 70%,transparent 100%);mask-composite:intersect}
 .contact .wrap{position:relative}
 .contact-main{max-width:600px;display:grid;gap:26px}
@@ -283,7 +283,7 @@ section.tint{background:var(--ink)}
 .cgrid .v{color:var(--white)}
 .copy{justify-self:start;margin-top:6px;background:none;border:0;box-shadow:inset 0 0 0 1px var(--line);border-radius:999px;color:var(--muted);font:600 .56rem var(--font);letter-spacing:.22em;text-transform:uppercase;padding:.7em 1.2em;cursor:pointer}
 .copy:hover{color:var(--gold-hi);box-shadow:inset 0 0 0 1px var(--gold)}
-@media (max-width:900px){.contact-photo{position:relative;width:auto;height:420px;margin-bottom:-60px}.contact-photo img{-webkit-mask-image:linear-gradient(to bottom,#000 60%,transparent);mask-image:linear-gradient(to bottom,#000 60%,transparent)}}
+@media (max-width:900px){.contact-photo{position:relative;right:auto;width:100%;margin-inline:0;height:420px;margin-bottom:-60px}.contact-photo img{-webkit-mask-image:linear-gradient(to bottom,#000 60%,transparent);mask-image:linear-gradient(to bottom,#000 60%,transparent)}}
 @media (max-width:520px){.cgrid{grid-template-columns:1fr}}
 
 footer.site{padding-block:64px 40px;border-top:1px solid var(--line-2);font-size:.8rem;color:var(--muted)}
@@ -708,7 +708,7 @@ footer.site{padding-block:64px 40px;border-top:1px solid var(--line-2);font-size
   </section>
 
   <section class="block contact" id="contato">
-    <div class="contact-photo" aria-hidden="true"><img loading="lazy" decoding="async" src="/img/retrato-terno.webp" srcset="/img/retrato-terno-640.webp 640w, /img/retrato-terno.webp 1066w" sizes="(max-width:900px) 100vw, 48vw" alt=""></div>
+    <div class="contact-photo" aria-hidden="true"><img decoding="async" src="/img/retrato-terno.webp" srcset="/img/retrato-terno-640.webp 640w, /img/retrato-terno.webp 1066w" sizes="(max-width:900px) 100vw, 48vw" alt=""></div>
     <div class="wrap">
       <div class="contact-main">
         <p class="eyebrow">Contato</p>
