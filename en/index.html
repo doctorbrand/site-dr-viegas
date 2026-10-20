@@ -143,21 +143,25 @@ section.tint{background:var(--ink)}
 @media (max-width:860px){.pillars{grid-template-columns:1fr;gap:32px}.pillar+.pillar{padding-left:0;border-left:0;padding-top:32px;border-top:1px solid var(--line)}}
 
 /* Procedimentos */
-.procs{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,88px);align-items:start}
+.procs{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,88px);align-items:end;margin-bottom:clamp(48px,6vw,72px)}
 .procs>*{min-width:0}
-.procs-aside{position:sticky;top:110px;display:grid;gap:28px}
-.procs-aside img{width:100%;aspect-ratio:4/5;object-fit:cover}
-.plist{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--line-2)}
-.plist li{border-top:1px solid var(--line-2)}
-.plist li>a,.plist li>div{display:grid;grid-template-columns:44px minmax(0,1fr) minmax(0,1.15fr) 20px;align-items:baseline;gap:20px;padding-block:22px;text-decoration:none;color:inherit}
-.plist .pn{font-size:.62rem;font-weight:500;letter-spacing:.2em;color:var(--gold)}
+.procs-photo{margin:0;aspect-ratio:16/10;overflow:hidden}
+.procs-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.plist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.plist li{border-bottom:1px solid var(--line-2)}
+.plist li:not(:nth-child(3n+1)){border-left:1px solid var(--line-2)}
+.plist li>a,.plist li>div{position:relative;display:grid;gap:14px;align-content:start;height:100%;padding:36px clamp(20px,2.6vw,36px) 40px;text-decoration:none;color:inherit;transition:background .25s}
+.ptop{display:flex;align-items:center;gap:14px}
+.plist .pn{font-size:.62rem;font-weight:500;letter-spacing:.2em;color:var(--dim)}
+.plist .pt{font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
 .plist h3{transition:color .2s}
-.plist li p{color:var(--muted);font-size:.84rem;line-height:1.6}
-.plist .pa{width:16px;height:16px;fill:none;stroke:var(--dim);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;align-self:center;transition:transform .25s,stroke .2s}
+.plist li p{color:var(--muted);font-size:.84rem;line-height:1.75;max-width:34ch}
+.plist .pa{position:absolute;top:34px;right:clamp(20px,2.6vw,36px);width:16px;height:16px;fill:none;stroke:var(--dim);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s,stroke .2s}
+.plist li>a:hover{background:rgba(201,164,92,.04)}
 .plist li>a:hover h3{color:var(--gold-hi)}
 .plist li>a:hover .pa{stroke:var(--gold);transform:translateX(3px)}
-@media (max-width:900px){.procs{grid-template-columns:1fr}.procs-aside{position:static}}
-@media (max-width:640px){.plist li>a,.plist li>div{grid-template-columns:34px minmax(0,1fr) 16px;row-gap:4px}.plist li p{grid-column:2}.plist .pa{grid-row:1;grid-column:3}}
+@media (max-width:900px){.procs{grid-template-columns:1fr;align-items:start}.plist{grid-template-columns:1fr 1fr}.plist li:not(:nth-child(3n+1)){border-left:0}.plist li:nth-child(2n){border-left:1px solid var(--line-2)}}
+@media (max-width:600px){.plist{grid-template-columns:1fr}.plist li:nth-child(2n){border-left:0}.plist li>a,.plist li>div{padding:28px 0 30px}.plist .pa{right:0;top:28px}}
 
 /* R24R com foto de fundo */
 .r24{position:relative;overflow:hidden;background:radial-gradient(50% 70% at 85% 30%,#15120d 0%,rgba(7,7,7,0) 70%),var(--ink)}
@@ -521,7 +525,7 @@ footer.site{padding-block:64px 40px;border-top:1px solid var(--line-2);font-size
     <nav class="links" aria-label="Sections">
       <a href="#dr-viegas">Dr. Viégas</a><a href="#procedimentos">Procedures</a><a href="#r24r">24h Recovery</a><a href="/en/resultados/">Results</a>
     </nav>
-    <div class="bar-right"><div class="bar-right"><div class="bar-right"><div class="bar-right"><div class="bar-right"><div class="bar-right"><div class="lang"><button type="button" class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Language: English"><svg viewBox="0 0 20 20" aria-hidden="true"><defs><clipPath id="cfben"><circle cx="10" cy="10" r="10"/></clipPath></defs><g clip-path="url(#cfben)"><rect width="20" height="20" fill="#f3efe7"/><g fill="#b3283b"><rect y="0" width="20" height="1.54"/><rect y="3.08" width="20" height="1.54"/><rect y="6.15" width="20" height="1.54"/><rect y="9.23" width="20" height="1.54"/><rect y="12.31" width="20" height="1.54"/><rect y="15.38" width="20" height="1.54"/><rect y="18.46" width="20" height="1.54"/></g><rect width="9.2" height="10.77" fill="#2b3a6b"/></g></svg><span>EN</span><svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button><div class="lang-menu" id="langMenu" role="menu" hidden><a href="/" hreflang="pt-BR" lang="pt-BR" role="menuitem" data-track="Idioma PT"><svg viewBox="0 0 20 20" aria-hidden="true"><defs><clipPath id="cfdpt"><circle cx="10" cy="10" r="10"/></clipPath></defs><g clip-path="url(#cfdpt)"><rect width="20" height="20" fill="#1f8f4e"/><path d="M10 3.6 17.4 10 10 16.4 2.6 10z" fill="#f2c94c"/><circle cx="10" cy="10" r="3.6" fill="#1d3f8f"/></g></svg><span>Português</span></a><a href="/en/" hreflang="en" lang="en" role="menuitem" aria-current="true" data-track="Idioma EN"><svg viewBox="0 0 20 20" aria-hidden="true"><defs><clipPath id="cfden"><circle cx="10" cy="10" r="10"/></clipPath></defs><g clip-path="url(#cfden)"><rect width="20" height="20" fill="#f3efe7"/><g fill="#b3283b"><rect y="0" width="20" height="1.54"/><rect y="3.08" width="20" height="1.54"/><rect y="6.15" width="20" height="1.54"/><rect y="9.23" width="20" height="1.54"/><rect y="12.31" width="20" height="1.54"/><rect y="15.38" width="20" height="1.54"/><rect y="18.46" width="20" height="1.54"/></g><rect width="9.2" height="10.77" fill="#2b3a6b"/></g></svg><span>English</span></a><a href="/es/" hreflang="es" lang="es" role="menuitem" data-track="Idioma ES"><svg viewBox="0 0 20 20" aria-hidden="true"><defs><clipPath id="cfdes"><circle cx="10" cy="10" r="10"/></clipPath></defs><g clip-path="url(#cfdes)"><rect width="20" height="20" fill="#c3272f"/><rect y="5" width="20" height="10" fill="#f2c13a"/></g></svg><span>Español</span></a></div></div><!--/lang--><a class="btn" href="/obrigado/?origem=agende-1-en&amp;lang=en" data-track="Book a consultation 1">Book a consultation</a></div></div></div></div></div></div>
+    <div class="bar-right"><div class="bar-right"><div class="bar-right"><div class="bar-right"><div class="bar-right"><div class="bar-right"><div class="bar-right"><div class="lang"><button type="button" class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Language: English"><svg viewBox="0 0 20 20" aria-hidden="true"><defs><clipPath id="cfben"><circle cx="10" cy="10" r="10"/></clipPath></defs><g clip-path="url(#cfben)"><rect width="20" height="20" fill="#f3efe7"/><g fill="#b3283b"><rect y="0" width="20" height="1.54"/><rect y="3.08" width="20" height="1.54"/><rect y="6.15" width="20" height="1.54"/><rect y="9.23" width="20" height="1.54"/><rect y="12.31" width="20" height="1.54"/><rect y="15.38" width="20" height="1.54"/><rect y="18.46" width="20" height="1.54"/></g><rect width="9.2" height="10.77" fill="#2b3a6b"/></g></svg><span>EN</span><svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button><div class="lang-menu" id="langMenu" role="menu" hidden><a href="/" hreflang="pt-BR" lang="pt-BR" role="menuitem" data-track="Idioma PT"><svg viewBox="0 0 20 20" aria-hidden="true"><defs><clipPath id="cfdpt"><circle cx="10" cy="10" r="10"/></clipPath></defs><g clip-path="url(#cfdpt)"><rect width="20" height="20" fill="#1f8f4e"/><path d="M10 3.6 17.4 10 10 16.4 2.6 10z" fill="#f2c94c"/><circle cx="10" cy="10" r="3.6" fill="#1d3f8f"/></g></svg><span>Português</span></a><a href="/en/" hreflang="en" lang="en" role="menuitem" aria-current="true" data-track="Idioma EN"><svg viewBox="0 0 20 20" aria-hidden="true"><defs><clipPath id="cfden"><circle cx="10" cy="10" r="10"/></clipPath></defs><g clip-path="url(#cfden)"><rect width="20" height="20" fill="#f3efe7"/><g fill="#b3283b"><rect y="0" width="20" height="1.54"/><rect y="3.08" width="20" height="1.54"/><rect y="6.15" width="20" height="1.54"/><rect y="9.23" width="20" height="1.54"/><rect y="12.31" width="20" height="1.54"/><rect y="15.38" width="20" height="1.54"/><rect y="18.46" width="20" height="1.54"/></g><rect width="9.2" height="10.77" fill="#2b3a6b"/></g></svg><span>English</span></a><a href="/es/" hreflang="es" lang="es" role="menuitem" data-track="Idioma ES"><svg viewBox="0 0 20 20" aria-hidden="true"><defs><clipPath id="cfdes"><circle cx="10" cy="10" r="10"/></clipPath></defs><g clip-path="url(#cfdes)"><rect width="20" height="20" fill="#c3272f"/><rect y="5" width="20" height="10" fill="#f2c13a"/></g></svg><span>Español</span></a></div></div><!--/lang--><a class="btn" href="/obrigado/?origem=agende-1-en&amp;lang=en" data-track="Book a consultation 1">Book a consultation</a></div></div></div></div></div></div></div>
     <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mnav">Menu</button>
   </div>
   <nav class="wrap mobile-nav" id="mnav" hidden aria-label="Sections">
@@ -584,25 +588,25 @@ footer.site{padding-block:64px 40px;border-top:1px solid var(--line-2);font-size
   </section>
 
   <section class="block" id="procedimentos">
-    <div class="wrap procs">
-      <div class="procs-aside">
+    <div class="wrap">
+      <div class="procs">
         <div class="head" style="margin:0">
           <p class="eyebrow">Procedures</p>
           <h2>Breast surgery <em>planned for you</em></h2>
           <p class="lede">The technique is chosen based on your anatomy, the result you want and your stage of life.</p>
         </div>
-        <img loading="lazy" decoding="async" src="/img/marcacao-pre-operatoria.webp" alt="Dr. Viégas making the pre-operative markings" width="867" height="1300">
+        <figure class="procs-photo"><img loading="lazy" decoding="async" src="/img/marcacao-pre-operatoria.webp" alt="Dr. Viégas making the pre-operative markings" width="867" height="1300"></figure>
       </div>
       <ul class="plist">
-        <li><a href="/en/resultados/#r24r-anatomica" data-track="Procedure R24R breast implants"><span class="pn">01</span><h3>R24R breast implants</h3><p>Arms free on the same day</p><svg class="pa" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
-        <li><a href="/en/resultados/#r24r-redonda" data-track="Procedure Breast augmentation"><span class="pn">02</span><h3>Breast augmentation</h3><p>Implant defined by your measurements</p><svg class="pa" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
-        <li><a href="/en/resultados/#mastopexia-t" data-track="Procedure Breast lift with implants"><span class="pn">03</span><h3>Breast lift with implants</h3><p>Lifts and restores volume in one surgery</p><svg class="pa" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
-        <li><div><span class="pn">04</span><h3>Internal breast lift</h3><p>A lift with reduced scars</p></div></li>
-        <li><div><span class="pn">05</span><h3>Internal bra</h3><p>Long-term breast support</p></div></li>
-        <li><a href="/en/resultados/#reducao" data-track="Procedure Breast reduction"><span class="pn">06</span><h3>Breast reduction</h3><p>Less volume and weight, more comfort</p><svg class="pa" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
-        <li><a href="/en/resultados/#mama-tuberosa" data-track="Procedure Tuberous breast"><span class="pn">07</span><h3>Tuberous breast</h3><p>Correcting the breast base and shape</p><svg class="pa" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
-        <li><a href="/en/resultados/#troca-de-protese" data-track="Procedure Implant exchange"><span class="pn">08</span><h3>Implant exchange</h3><p>Replacement with a new plan</p><svg class="pa" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
-        <li><div><span class="pn">09</span><h3>Implants for Asian patients</h3><p>Planning for Asian body types</p></div></li>
+        <li><a href="/en/resultados/#r24r-anatomica" data-track="Procedure R24R breast implants"><div class="ptop"><span class="pn">01</span><span class="pt">24h Recovery</span></div><h3>R24R breast implants</h3><p>Dual-plane implants with a fast-recovery protocol. Arms move on the very day of surgery.</p><svg class="pa" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="/en/resultados/#r24r-redonda" data-track="Procedure Breast augmentation"><div class="ptop"><span class="pn">02</span><span class="pt">Augmentation</span></div><h3>Breast augmentation</h3><p>Implant type, profile and size defined by chest measurements and tissue coverage.</p><svg class="pa" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="/en/resultados/#mastopexia-t" data-track="Procedure Breast lift with implants"><div class="ptop"><span class="pn">03</span><span class="pt">Lift and volume</span></div><h3>Breast lift with implants</h3><p>Lifts the breast and restores volume in a single procedure, with an L- or T-shaped scar depending on anatomy.</p><svg class="pa" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><div><div class="ptop"><span class="pn">04</span><span class="pt">Lift</span></div><h3>Internal breast lift</h3><p>Repositioning of the breast with a focus on shorter scars, for selected cases.</p></div></li>
+        <li><div><div class="ptop"><span class="pn">05</span><span class="pt">Support</span></div><h3>Internal bra</h3><p>Internal support for the breast tissue that helps hold the breast and implant in place over time.</p></div></li>
+        <li><a href="/en/resultados/#reducao" data-track="Procedure Breast reduction"><div class="ptop"><span class="pn">06</span><span class="pt">Reduction</span></div><h3>Breast reduction</h3><p>Reduces breast volume and weight, easing postural discomfort and creating a lighter contour.</p><svg class="pa" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="/en/resultados/#mama-tuberosa" data-track="Procedure Tuberous breast"><div class="ptop"><span class="pn">07</span><span class="pt">Correction</span></div><h3>Tuberous breast</h3><p>Correction of a narrow base and enlarged areola, reshaping the breast.</p><svg class="pa" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="/en/resultados/#troca-de-protese" data-track="Procedure Implant exchange"><div class="ptop"><span class="pn">08</span><span class="pt">Revision</span></div><h3>Implant exchange</h3><p>Assessment and replacement of old, displaced or contracted implants, with a new surgical plan.</p><svg class="pa" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><div><div class="ptop"><span class="pn">09</span><span class="pt">Individuality</span></div><h3>Implants for Asian patients</h3><p>Planning adapted to the chest, skin and proportions of Asian body types.</p></div></li>
       </ul>
     </div>
   </section>
@@ -1024,6 +1028,15 @@ footer.site{padding-block:64px 40px;border-top:1px solid var(--line-2);font-size
   if('IntersectionObserver' in window){
     new IntersectionObserver(function(es){ es.forEach(function(e){ if(user) return; e.isIntersecting?play():(loaded&&v.pause()); }); },{rootMargin:'200px 0px'}).observe(v);
   } else play();
+})();
+
+(function(){
+  var b=document.getElementById('langBtn'), m=document.getElementById('langMenu'); if(!b||!m) return;
+  function close(){ m.hidden=true; b.setAttribute('aria-expanded','false'); }
+  b.addEventListener('click',function(e){ e.stopPropagation(); var o=m.hidden; m.hidden=!o; b.setAttribute('aria-expanded',String(o)); });
+  document.addEventListener('click',function(e){ if(!m.hidden && !m.contains(e.target)) close(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+  m.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){ try{localStorage.setItem('vg_lang',a.getAttribute('hreflang'))}catch(e){} }); });
 })();
 
 (function(){
