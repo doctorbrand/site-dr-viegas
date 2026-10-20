@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Abrindo o WhatsApp | Dr. Diego Viégas</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#070707">
+<link rel="icon" href="/favicon.png" type="image/png">
+<style>
+:root{--black:#070707;--white:#f3efe7;--muted:#9a9488;--gold:#c9a45c;--gold-grad:linear-gradient(120deg,#f0dba6 0%,#d4b06a 38%,#b48a45 72%,#8f6d35 100%);color-scheme:dark}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:var(--black);color:var(--white);font-family:Montserrat,"Helvetica Neue",Arial,sans-serif;font-weight:300;display:grid;place-items:center;text-align:center;padding:24px}
+main{display:grid;gap:18px;justify-items:center;max-width:420px}
+.ring{width:44px;height:44px;border-radius:50%;border:1px solid rgba(201,164,92,.25);border-top-color:var(--gold);animation:s .9s linear infinite}
+@keyframes s{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.ring{animation:none}}
+h1{margin:0;font-weight:200;font-size:1.1rem;letter-spacing:.14em;text-transform:uppercase}
+p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.7}
+a{display:inline-flex;padding:1em 2em;border-radius:999px;background:var(--gold-grad);color:#1a1408;text-decoration:none;font-size:.66rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase}
+</style>
+<script src="/js/config.js"></script>
+<script src="/js/tracking.js"></script>
+</head>
+<body>
+<main>
+  <div class="ring" aria-hidden="true"></div>
+  <h1>Obrigado pelo contato</h1>
+  <p>Estamos abrindo a conversa com a equipe do Dr. Viégas no WhatsApp.</p>
+  <a id="go" href="https://wa.me/5521968736185">Abrir o WhatsApp</a>
+</main>
+<script>
+(function(){
+  var p=new URLSearchParams(location.search), origem=(p.get('origem')||'site').slice(0,60);
+  var url=(window.VG&&VG.whatsappUrl)?VG.whatsappUrl(origem):'https://wa.me/5521968736185';
+  document.getElementById('go').href=url;
+  try{ if(window.VG) VG.lead(origem); }catch(e){}
+  var d=(window.VG_CONFIG&&VG_CONFIG.redirectDelayMs)||350;
+  setTimeout(function(){ location.replace(url); }, d);
+})();
+</script>
+</body>
+</html>

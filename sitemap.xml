@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.drviegas.com.br/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image><image:loc>https://www.drviegas.com.br/img/retrato-jaleco.webp</image:loc><image:title>Dr. Diego Viégas, cirurgião plástico dedicado à mama</image:title></image:image>
+    <image:image><image:loc>https://www.drviegas.com.br/img/retrato-terno.webp</image:loc><image:title>Dr. Diego Viégas</image:title></image:image>
+    <image:image><image:loc>https://www.drviegas.com.br/img/fellowship-centro-cirurgico-1.webp</image:loc><image:title>Fellowship Viégas no centro cirúrgico</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.drviegas.com.br/llms.txt</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>

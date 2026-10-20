@@ -1,0 +1,34 @@
+# Dr. Diego Viégas - drviegas.com.br
+User-agent: *
+Allow: /
+Disallow: /obrigado/
+
+# Buscadores e assistentes de IA: acesso liberado ao conteúdo público
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /obrigado/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /obrigado/
+
+User-agent: GPTBot
+Allow: /
+Disallow: /obrigado/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /obrigado/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /obrigado/
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+Disallow: /obrigado/
+
+Sitemap: https://www.drviegas.com.br/sitemap.xml
