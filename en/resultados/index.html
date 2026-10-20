@@ -95,6 +95,8 @@ nav.links a:hover{color:var(--gold-hi)}
 .hero-grid{display:grid;grid-template-columns:1fr;align-items:center;min-height:min(80vh,780px)}
 .hero-copy{display:grid;gap:26px;padding-block:72px;max-width:520px;position:relative;z-index:2}
 .hero-copy .lede{max-width:44ch}
+.h1-line{font-size:clamp(1.05rem,1.8vw,1.5rem);letter-spacing:.12em;line-height:1.4}
+@media (min-width:901px){.h1-line{white-space:nowrap;width:max-content}}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .cred{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--dim)}
 .hero-photo{position:absolute;top:0;right:calc(max(0px, (100% - var(--wrap)) / 2) + 20px);bottom:0;width:min(56%,720px);margin:0;pointer-events:none}
@@ -142,25 +144,27 @@ section.tint{background:var(--ink)}
 @media (max-width:860px){.pillars{grid-template-columns:1fr;gap:32px}.pillar+.pillar{padding-left:0;border-left:0;padding-top:32px;border-top:1px solid var(--line)}}
 
 /* Procedimentos */
-.procs{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,88px);align-items:end;margin-bottom:clamp(48px,6vw,72px)}
+.procs{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,88px);align-items:start}
 .procs>*{min-width:0}
-.procs-photo{margin:0;aspect-ratio:16/10;overflow:hidden}
-.procs-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
-.plist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
-.plist li{border-bottom:1px solid var(--line-2)}
-.plist li:not(:nth-child(3n+1)){border-left:1px solid var(--line-2)}
-.plist li>a,.plist li>div{position:relative;display:grid;gap:14px;align-content:start;height:100%;padding:36px clamp(20px,2.6vw,36px) 40px;text-decoration:none;color:inherit;transition:background .25s}
-.ptop{display:flex;align-items:center;gap:14px}
-.plist .pn{font-size:.62rem;font-weight:500;letter-spacing:.2em;color:var(--dim)}
-.plist .pt{font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.procs-aside{position:sticky;top:110px;display:grid;gap:28px}
+.procs-aside img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.plist{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--line-2)}
+.plist li{border-top:1px solid var(--line-2)}
+.plist li>a,.plist li>div{display:grid;grid-template-columns:44px minmax(0,1fr) auto 20px;grid-template-rows:auto 0fr;align-items:center;column-gap:18px;padding-block:24px;text-decoration:none;color:inherit;outline-offset:-1px;transition:grid-template-rows .35s ease,padding .35s ease}
+.plist .pn{font-size:.62rem;font-weight:500;letter-spacing:.2em;color:var(--dim);transition:color .2s}
 .plist h3{transition:color .2s}
-.plist li p{color:var(--muted);font-size:.84rem;line-height:1.75;max-width:34ch}
-.plist .pa{position:absolute;top:34px;right:clamp(20px,2.6vw,36px);width:16px;height:16px;fill:none;stroke:var(--dim);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s,stroke .2s}
-.plist li>a:hover{background:rgba(201,164,92,.04)}
-.plist li>a:hover h3{color:var(--gold-hi)}
+.plist .pt{font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;color:var(--dim);transition:color .2s}
+.plist .pa{width:16px;height:16px;fill:none;stroke:var(--dim);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s,stroke .2s}
+.plist .pd{grid-column:2/-1;overflow:hidden;min-height:0}
+.plist .pd p{color:var(--muted);font-size:.86rem;line-height:1.75;max-width:52ch;padding-top:12px;opacity:0;transform:translateY(-4px);transition:opacity .3s,transform .3s}
+.plist li>*:hover,.plist li>*:focus-visible{grid-template-rows:auto 1fr}
+.plist li>*:hover .pd p,.plist li>*:focus-visible .pd p{opacity:1;transform:none}
+.plist li>*:hover h3,.plist li>*:focus-visible h3{color:var(--gold-hi)}
+.plist li>*:hover .pn,.plist li>*:hover .pt{color:var(--gold)}
 .plist li>a:hover .pa{stroke:var(--gold);transform:translateX(3px)}
-@media (max-width:900px){.procs{grid-template-columns:1fr;align-items:start}.plist{grid-template-columns:1fr 1fr}.plist li:not(:nth-child(3n+1)){border-left:0}.plist li:nth-child(2n){border-left:1px solid var(--line-2)}}
-@media (max-width:600px){.plist{grid-template-columns:1fr}.plist li:nth-child(2n){border-left:0}.plist li>a,.plist li>div{padding:28px 0 30px}.plist .pa{right:0;top:28px}}
+@media (hover:none){.plist li>a,.plist li>div{grid-template-rows:auto 1fr}.plist .pd p{opacity:1;transform:none;padding-top:8px}}
+@media (max-width:900px){.procs{grid-template-columns:1fr}.procs-aside{position:static}}
+@media (max-width:600px){.plist li>a,.plist li>div{grid-template-columns:30px minmax(0,1fr) 16px;column-gap:12px}.plist .pt{display:none}.plist .pd{grid-column:2/-1}}
 
 /* R24R com foto de fundo */
 .r24{position:relative;overflow:hidden;background:radial-gradient(50% 70% at 85% 30%,#15120d 0%,rgba(7,7,7,0) 70%),var(--ink)}
@@ -588,7 +592,7 @@ footer.site{padding-block:64px 40px;border-top:1px solid var(--line-2);font-size
     <nav class="links" aria-label="Sections">
       <a href="/en/#dr-viegas">Dr. Viégas</a><a href="/en/#procedimentos">Procedures</a><a href="/en/#r24r">24h Recovery</a><a href="/en/resultados/" aria-current="page">Results</a>
     </nav>
-    <div class="bar-right"><div class="bar-right"><div class="bar-right"><div class="bar-right"><div class="bar-right"><div class="bar-right"><div class="bar-right"><div class="lang"><button type="button" class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Language: English"><svg viewBox="0 0 20 20" aria-hidden="true"><defs><clipPath id="cfben"><circle cx="10" cy="10" r="10"/></clipPath></defs><g clip-path="url(#cfben)"><rect width="20" height="20" fill="#f3efe7"/><g fill="#b3283b"><rect y="0" width="20" height="1.54"/><rect y="3.08" width="20" height="1.54"/><rect y="6.15" width="20" height="1.54"/><rect y="9.23" width="20" height="1.54"/><rect y="12.31" width="20" height="1.54"/><rect y="15.38" width="20" height="1.54"/><rect y="18.46" width="20" height="1.54"/></g><rect width="9.2" height="10.77" fill="#2b3a6b"/></g></svg><span>EN</span><svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button><div class="lang-menu" id="langMenu" role="menu" hidden><a href="/resultados/" hreflang="pt-BR" lang="pt-BR" role="menuitem" data-track="Idioma PT"><svg viewBox="0 0 20 20" aria-hidden="true"><defs><clipPath id="cfdpt"><circle cx="10" cy="10" r="10"/></clipPath></defs><g clip-path="url(#cfdpt)"><rect width="20" height="20" fill="#1f8f4e"/><path d="M10 3.6 17.4 10 10 16.4 2.6 10z" fill="#f2c94c"/><circle cx="10" cy="10" r="3.6" fill="#1d3f8f"/></g></svg><span>Português</span></a><a href="/en/resultados/" hreflang="en" lang="en" role="menuitem" aria-current="true" data-track="Idioma EN"><svg viewBox="0 0 20 20" aria-hidden="true"><defs><clipPath id="cfden"><circle cx="10" cy="10" r="10"/></clipPath></defs><g clip-path="url(#cfden)"><rect width="20" height="20" fill="#f3efe7"/><g fill="#b3283b"><rect y="0" width="20" height="1.54"/><rect y="3.08" width="20" height="1.54"/><rect y="6.15" width="20" height="1.54"/><rect y="9.23" width="20" height="1.54"/><rect y="12.31" width="20" height="1.54"/><rect y="15.38" width="20" height="1.54"/><rect y="18.46" width="20" height="1.54"/></g><rect width="9.2" height="10.77" fill="#2b3a6b"/></g></svg><span>English</span></a><a href="/es/resultados/" hreflang="es" lang="es" role="menuitem" data-track="Idioma ES"><svg viewBox="0 0 20 20" aria-hidden="true"><defs><clipPath id="cfdes"><circle cx="10" cy="10" r="10"/></clipPath></defs><g clip-path="url(#cfdes)"><rect width="20" height="20" fill="#c3272f"/><rect y="5" width="20" height="10" fill="#f2c13a"/></g></svg><span>Español</span></a></div></div><!--/lang--><a class="btn" href="/obrigado/?origem=agende-1-en&amp;lang=en" data-track="Book a consultation 1">Book a consultation</a></div></div></div></div></div></div></div>
+    <div class="bar-right"><div class="bar-right"><div class="bar-right"><div class="bar-right"><div class="bar-right"><div class="bar-right"><div class="bar-right"><div class="bar-right"><div class="lang"><button type="button" class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Language: English"><svg viewBox="0 0 20 20" aria-hidden="true"><defs><clipPath id="cfben"><circle cx="10" cy="10" r="10"/></clipPath></defs><g clip-path="url(#cfben)"><rect width="20" height="20" fill="#f3efe7"/><g fill="#b3283b"><rect y="0" width="20" height="1.54"/><rect y="3.08" width="20" height="1.54"/><rect y="6.15" width="20" height="1.54"/><rect y="9.23" width="20" height="1.54"/><rect y="12.31" width="20" height="1.54"/><rect y="15.38" width="20" height="1.54"/><rect y="18.46" width="20" height="1.54"/></g><rect width="9.2" height="10.77" fill="#2b3a6b"/></g></svg><span>EN</span><svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button><div class="lang-menu" id="langMenu" role="menu" hidden><a href="/resultados/" hreflang="pt-BR" lang="pt-BR" role="menuitem" data-track="Idioma PT"><svg viewBox="0 0 20 20" aria-hidden="true"><defs><clipPath id="cfdpt"><circle cx="10" cy="10" r="10"/></clipPath></defs><g clip-path="url(#cfdpt)"><rect width="20" height="20" fill="#1f8f4e"/><path d="M10 3.6 17.4 10 10 16.4 2.6 10z" fill="#f2c94c"/><circle cx="10" cy="10" r="3.6" fill="#1d3f8f"/></g></svg><span>Português</span></a><a href="/en/resultados/" hreflang="en" lang="en" role="menuitem" aria-current="true" data-track="Idioma EN"><svg viewBox="0 0 20 20" aria-hidden="true"><defs><clipPath id="cfden"><circle cx="10" cy="10" r="10"/></clipPath></defs><g clip-path="url(#cfden)"><rect width="20" height="20" fill="#f3efe7"/><g fill="#b3283b"><rect y="0" width="20" height="1.54"/><rect y="3.08" width="20" height="1.54"/><rect y="6.15" width="20" height="1.54"/><rect y="9.23" width="20" height="1.54"/><rect y="12.31" width="20" height="1.54"/><rect y="15.38" width="20" height="1.54"/><rect y="18.46" width="20" height="1.54"/></g><rect width="9.2" height="10.77" fill="#2b3a6b"/></g></svg><span>English</span></a><a href="/es/resultados/" hreflang="es" lang="es" role="menuitem" data-track="Idioma ES"><svg viewBox="0 0 20 20" aria-hidden="true"><defs><clipPath id="cfdes"><circle cx="10" cy="10" r="10"/></clipPath></defs><g clip-path="url(#cfdes)"><rect width="20" height="20" fill="#c3272f"/><rect y="5" width="20" height="10" fill="#f2c13a"/></g></svg><span>Español</span></a></div></div><!--/lang--><a class="btn" href="/obrigado/?origem=agende-1-en&amp;lang=en" data-track="Book a consultation 1">Book a consultation</a></div></div></div></div></div></div></div></div>
     <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mnav">Menu</button>
   </div>
   <nav class="wrap mobile-nav" id="mnav" hidden aria-label="Sections">
@@ -875,6 +879,15 @@ footer.site{padding-block:64px 40px;border-top:1px solid var(--line-2);font-size
   if('IntersectionObserver' in window){
     new IntersectionObserver(function(es){ es.forEach(function(e){ if(user) return; e.isIntersecting?play():(loaded&&v.pause()); }); },{rootMargin:'200px 0px'}).observe(v);
   } else play();
+})();
+
+(function(){
+  var b=document.getElementById('langBtn'), m=document.getElementById('langMenu'); if(!b||!m) return;
+  function close(){ m.hidden=true; b.setAttribute('aria-expanded','false'); }
+  b.addEventListener('click',function(e){ e.stopPropagation(); var o=m.hidden; m.hidden=!o; b.setAttribute('aria-expanded',String(o)); });
+  document.addEventListener('click',function(e){ if(!m.hidden && !m.contains(e.target)) close(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+  m.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){ try{localStorage.setItem('vg_lang',a.getAttribute('hreflang'))}catch(e){} }); });
 })();
 
 (function(){
