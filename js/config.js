@@ -15,6 +15,9 @@ window.VG_CONFIG = {
   whatsapp: "5521968736185",
   whatsappMessage: "Olá! Vim pelo site do Dr. Viégas e gostaria de agendar uma consulta.",
 
+  // E-mail que recebe as aplicações do Fellow (/fellow/aplicacao/)
+  fellowEmail: "viegasplastica@gmail.com",
+
   // Tempo na página de obrigado antes de abrir o WhatsApp (ms)
   redirectDelayMs: 350
 };
